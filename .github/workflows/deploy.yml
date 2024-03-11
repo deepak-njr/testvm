@@ -13,9 +13,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Deploy to Azure VM
-        #uses: appleboy/ssh-action@master
-          #host: 104.211.116.221
-          #username: testvm  # Azure VM username
-          #password: testvm@12345  # Azure VM password stored as GitHub secret
-        run: scp  -i ${{ secrets.TESTVM_SSH_KEY }} default1.html testvm@104.211.116.221:/var/www/html/default1.html
+      - name: Connect to vm
+        uses: appleboy/ssh-action@master
+        with: 
+             host: ${{ secrets.TESTVM_IP }}
+             username: ${{ secrets.TESTVM_USERNAME }}
+             password: ${{ secrets.TESTVM_PASSWORD }}
+             privateKey: ${{ secrets.TESTVM_SSH_KEY }}  
+
+
+      - name: Deploy code to vm  
+        run: scp default1.html testvm@104.211.116.221:/var/www/html/default1.html
