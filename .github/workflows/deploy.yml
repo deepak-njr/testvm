@@ -19,7 +19,7 @@ jobs:
              host: ${{ secrets.TESTVM_IP }}
              username: ${{ secrets.TESTVM_USERNAME }}
              password: ${{ secrets.TESTVM_PASSWORD }}
-             privateKey: ${{ secrets.TESTVM_SSH_KEY }}  
+             key: ${{ secrets.TESTVM_SSH_KEY }}  
 
 
       - name: Deploy code to vm  
