@@ -18,7 +18,7 @@ jobs:
         with: 
              host: ${{ secrets.TESTVM_IP }}
              username: ${{ secrets.TESTVM_USERNAME }}
-             password: ${{ secrets.TESTVM_PASSWORD }}
+             #password: ${{ secrets.TESTVM_PASSWORD }}
              key: ${{ secrets.TESTVM_SSH_KEY }}  
 
 
