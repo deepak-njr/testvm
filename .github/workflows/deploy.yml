@@ -20,4 +20,5 @@ jobs:
           username: testvm  # Azure VM username
           password: testvm@12345  # Azure VM password stored as GitHub secret
           script: |
+            cd testvm/
             sudo cp default1.html /var/www/html/default1.html
