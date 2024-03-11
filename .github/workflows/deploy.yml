@@ -23,4 +23,4 @@ jobs:
 
 
       - name: Deploy code to vm  
-        run: scp default1.html testvm@104.211.116.221:/var/www/html/default1.html
+        run: scp -o StrictHostKeyChecking=no default1.html testvm@104.211.116.221:/var/www/html/default1.html
