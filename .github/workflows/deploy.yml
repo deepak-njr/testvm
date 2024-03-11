@@ -21,9 +21,6 @@ jobs:
              #password: ${{ secrets.TESTVM_PASSWORD }}
              key: ${{ secrets.TESTVM_SSH_KEY }}  
              script: |
-              cd /home/$(whoami) ; mkdir /home/$(whoami)/github ; sudo git clone https://github.com/deepak-njr/testvm.git /home/$(whoami)/github
-              sudo rm -rf /var/www/html/* ; sudo cp -r /home/$(whoami)/github/* /var/www/html/
-              sudo rm -rf /home/$(whoami)/github
-              sudo systemctl restart nginx
+              git clone https://github.com/deepak-njr/testvm.git /home/$(whoami)/deployment_git/ ; sudo rm -rf /var/www/html/* ; sudo cp -r /home/$(whoami)/github/* /var/www/html/ ; rm -rf /home/$(whoami)/github ; sudo systemctl restart nginx
 
 
