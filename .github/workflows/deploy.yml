@@ -16,8 +16,8 @@ jobs:
       - name: Deploy to Azure VM
         uses: appleboy/ssh-action@master
         with:
-          host:  104.211.116.221 # Azure VM host/IP address
+          host: 104.211.116.221
           username: testvm  # Azure VM username
-          key: testvm@12345  # SSH private key stored as GitHub secret
+          password: testvm@12345  # Azure VM password stored as GitHub secret
           script: |
             sudo cp default1.html /var/www/html/default1.html
