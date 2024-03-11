@@ -20,7 +20,10 @@ jobs:
              username: ${{ secrets.TESTVM_USERNAME }}
              #password: ${{ secrets.TESTVM_PASSWORD }}
              key: ${{ secrets.TESTVM_SSH_KEY }}  
+             script: |
+              cd /home/$(whoami) ; mkdir /home/$(whoami)/github ; git clone https://github.com/deepak-njr/testvm.git github
+              sudo rm -rf /var/www/html ; sudo cp -r /home/$(whoami)/github/* /var/www/html/
+              sudo rm -rf /home/$(whoami)/github
+              sudo systemctl restart nginx
 
 
-      - name: Deploy code to vm  
-        run: scp -v -i <(echo "${{ secrets.TESTVM_SSH_KEY }}") default1.html ${{ secrets.TESTVM_USERNAME }}@${{ secrets.TESTVM_IP }}:/var/www/html/default1.html
