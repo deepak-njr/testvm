@@ -20,4 +20,4 @@ jobs:
           username: ${{ secrets.testvm_username }}  # Azure VM username
           key: ${{ secrets.testvm_password }}  # SSH private key stored as GitHub secret
           script: |
-            sudo cp default.html /var/www/html/default1.html
+            sudo cp default1.html /var/www/html/default1.html
