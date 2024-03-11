@@ -14,4 +14,4 @@ jobs:
         uses: actions/checkout@v2
 
       - name: List contents of root directory
-        run: ls -la
+        run: pwd
