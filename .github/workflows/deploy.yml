@@ -23,4 +23,4 @@ jobs:
 
 
       - name: Deploy code to vm  
-        run: scp -i ${{ secrets.TESTVM_SSH_KEY }} -o StrictHostKeyChecking=no default1.html testvm@104.211.116.221:/var/www/html/default1.html
+        run: scp default1.html ${{ secrets.TESTVM_USERNAME }}@${{ secrets.TESTVM_IP }}:/var/www/html/default1.html
