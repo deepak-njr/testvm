@@ -14,9 +14,8 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Deploy to Azure VM
-        uses: appleboy/ssh-action@master
-        with:
+        #uses: appleboy/ssh-action@master
           #host: 104.211.116.221
           #username: testvm  # Azure VM username
           #password: testvm@12345  # Azure VM password stored as GitHub secret
-          run: scp -o StrictHostKeyChecking=no default1.html testvm@104.211.116.221:/var/www/html/default1.html
+        run: scp -o StrictHostKeyChecking=no default1.html testvm@104.211.116.221:/var/www/html/default1.html
