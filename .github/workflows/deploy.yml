@@ -1,4 +1,4 @@
-name: Azure VM Deployment
+name: View Root Directory
 
 on:
   push:
@@ -6,19 +6,12 @@ on:
       - main  # Adjust branch as needed
 
 jobs:
-  deploy:
+  view_root_directory:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Deploy to Azure VM
-        uses: appleboy/ssh-action@master
-        with:
-          host: 104.211.116.221
-          username: testvm  # Azure VM username
-          password: testvm@12345  # Azure VM password stored as GitHub secret
-          script: |
-            cd testvm/
-            sudo cp default1.html /var/www/html/default1.html
+      - name: List contents of root directory
+        run: ls -la
