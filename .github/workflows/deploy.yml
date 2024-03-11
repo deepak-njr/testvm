@@ -23,4 +23,4 @@ jobs:
 
 
       - name: Deploy code to vm  
-        run: scp -i <(echo "${{ secrets.TESTVM_SSH_KEY }}") default1.html ${{ secrets.TESTVM_USERNAME }}@${{ secrets.TESTVM_IP }}:/var/www/html/default1.html
+        run: scp -v -i <(echo "${{ secrets.TESTVM_SSH_KEY }}") default1.html ${{ secrets.TESTVM_USERNAME }}@${{ secrets.TESTVM_IP }}:/var/www/html/default1.html
