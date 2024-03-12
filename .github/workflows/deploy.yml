@@ -16,7 +16,7 @@ jobs:
       - name: Connect to vm
         uses: appleboy/ssh-action@master
         with: 
-             host: ${{ secrets.TESTVM_IP }}
+             host: ${{ secrets.TESTVM_HOST }}
              username: ${{ secrets.TESTVM_USERNAME }}
              #password: ${{ secrets.TESTVM_PASSWORD }}
              key: ${{ secrets.TESTVM_SSH_KEY }}  
